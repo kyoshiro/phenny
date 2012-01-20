@@ -57,7 +57,8 @@ def startup(phenny, input):
       phenny.write(('PASS', phenny.config.serverpass))
 
    if hasattr(phenny.config, 'password'):
-      phenny.msg('NickServ', 'IDENTIFY %s' % phenny.config.password)
+      #phenny.msg('NickServ', 'IDENTIFY %s' % phenny.config.password)
+      phenny.msg('Q@CServe.quakenet.org', 'AUTH %s %s; wait 3500' % (phenny.config.owner, phenny.config.password))
       __import__('time').sleep(5)
 
    # Cf. http://swhack.com/logs/2005-12-05#T19-32-36
